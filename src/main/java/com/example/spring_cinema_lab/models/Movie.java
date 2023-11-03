@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "movies")
 public class Movie {
 
-    @Id
+    @Id // adding primary key constraint
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 

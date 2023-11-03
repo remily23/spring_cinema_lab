@@ -5,7 +5,9 @@ import com.example.spring_cinema_lab.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MovieService {
@@ -21,11 +23,11 @@ public class MovieService {
         movieRepository.save(movie);
     }
 
-    public Movie getMovieById(long id){
-        return movieRepository.getById(id);
+    public Optional<Movie> findMovieById(long id){
+        return movieRepository.findById(id);
     }
 
-    public List<Movie> getMovieList(){
+    public List<Movie> getAllMovies(){
         return movieRepository.findAll();
     }
 
